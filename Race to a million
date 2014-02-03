@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+body{
+	background-color:#d0e4fe;
+}
+h1{
+color:orange;
+text-align:center;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Jovanny Narciso Assigment One</title>
+</head>
+<body>
+<h1>Race to a million</h1>
+<?php
+//Jovanny Narciso
+//PHP Web Application
+//Program one
+////////////////////////////////////////////////
+//start timer code.  You must use this code exactly
+//Put right before your code
+$mtime = microtime(); 
+$mtime = explode(" ",$mtime); 
+$mtime = $mtime[1] + $mtime[0]; 
+$starttime = $mtime; 
+////////////////////////////////////////////////
+
+//start code changes
+
+//your code goes here:
+header( 'Content-type: text/html; charset=utf-8' );
+echo 'Begin ...<br />';
+for( $i = 0 ; $i < 1000000 ; $i++ )
+
+{
+    echo $i ;
+if ($i%35==0)
+	echo "<br/>";	 
+	
+    //flush();
+    ob_flush();
+	
+    sleep(0.05);
+}
+echo "<br/>";
+echo 'End ...<br />';
+ 
+
+//end code changes
+
+////////////////////////////////////////////////
+
+//end timer code.  You must use this code exactly
+
+//Put right after your code
+
+$mtime = microtime();
+
+$mtime = explode(" ",$mtime);
+
+$mtime = $mtime[1] + $mtime[0];
+
+$endtime = $mtime;
+
+$totaltime = ($endtime - $starttime);
+
+/////////////////////////////////////////////////
+
+echo ("<br /><br /><b>Total count time:</b> ".$totaltime." seconds");
+
+?>
+</body>
+</html>
